@@ -188,8 +188,8 @@ class KeychainWrapperDefaultWrapperTests: XCTestCase {
             XCTFail("Data references for Key not found")
         }
         
-        if let retrievedString = NSString(data: retrievedData, encoding: String.Encoding.utf8) {
-            XCTAssertEqual(retrievedString, testString, "String retrieved from data for key should equal string saved as data for key")
+        if let retrievedString = NSString(data: retrievedData, encoding: String.Encoding.utf8.rawValue) {
+            XCTAssertEqual(retrievedString as String, testString, "String retrieved from data for key should equal string saved as data for key")
         } else {
             XCTFail("Output Data for key does not match input. ")
         }
